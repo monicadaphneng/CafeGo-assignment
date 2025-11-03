@@ -1,9 +1,21 @@
-<h1>CafeGo</h1>
-
-<a href="/">All products</a>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Name }} - CafeGo</title>
+</head>
+<body>
 <h1>{{ .Name }}</h1>
 <p>Price: PHP {{ .Price }}</p>
 <p>{{ .Description }}</p>
-<a href="/">Back to products</a>
+
+<form method="POST">
+    <label>Quantity:</label>
+    <input type="number" name="quantity" value="1" min="1">
+    <input type="submit" value="Add to Cart">
+</form>
+
+<p><a href="/">Back to Home</a></p>
+</body>
+</html>
 

@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Your Cart - CafeGo</title>
-</head>
-<body>
 <h1>CafeGo</h1>
 <p>Welcome, {{ .User.Username }}!</p>
 <a href="/">Back to home page</a>
 
 <h2>My Cart</h2>
-
 <form method="POST" action="/cart/">
     <ul>
         {{ range $ci := .CartItems }}
@@ -23,6 +15,4 @@
         <input type="submit" value="Checkout">
     {{ end }}
 </form>
-</body>
-</html>
 

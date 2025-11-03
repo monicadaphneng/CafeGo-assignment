@@ -1,10 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CafeGo</title>
+</head>
+<body>
 <h1>CafeGo</h1>
-
 <p>Welcome, {{ .Username }}!</p>
 
 <ul>
     {{ range $p := .Products }}
-        <li><a href="/product/{{ $p.Id }}">{{ $p.Name }}</a> - PHP {{ $p.Price }}</li>
+        <li>
+            <a href="/product/{{ $p.Id }}">{{ $p.Name }}</a> - PHP {{ $p.Price }}
+        </li>
     {{ end }}
 </ul>
+
+<p>
+    <a href="/cart/">View My Cart</a> | 
+    <a href="/transactions/">Transaction History</a>
+</p>
+</body>
+</html>
 
