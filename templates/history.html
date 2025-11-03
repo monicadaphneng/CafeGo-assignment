@@ -1,0 +1,16 @@
+<h1>Transaction History</h1>
+<p>Welcome, {{ .User.Username }}! <a href="/">Home</a></p>
+
+{{ if .Transactions }}
+    {{ range .Transactions }}
+        <h3>Transaction ID: {{ .TransactionID }} | Date: {{ .CreatedAt }}</h3>
+        <ul>
+            {{ range .Items }}
+                <li>{{ .Quantity }} x {{ .ProductName }}</li>
+            {{ end }}
+        </ul>
+    {{ end }}
+{{ else }}
+    <p>No transactions yet.</p>
+{{ end }}
+

@@ -1,0 +1,6 @@
+<ul>
+    {{ range $p := .Products }}
+        <li><a href="/product/{{ $p.Id }}">{{ $p.Name }}</a> - PHP {{ $p.Price }}</li>
+    {{ end }}
+</ul>
+

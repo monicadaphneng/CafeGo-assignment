@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction History - CafeGo</title>
+</head>
+<body>
+    <h1>CafeGo</h1>
+    <p>Welcome, {{ .User.Username }}!</p>
+    <a href="/">Back to home page</a>
+
+    <h2>Transaction History</h2>
+
+    {{ if .Transactions }}
+        {{ range .Transactions }}
+            <div>
+                <strong>Transaction #{{ .ID }}</strong> - {{ .CreatedAt }}<br>
+                <ul>
+                    {{ range .Items }}
+                        <li>{{ .Quantity }} × {{ .ProductName }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            <hr>
+        {{ end }}
+    {{ else }}
+        <p>No transactions yet.</p>
+    {{ end }}
+</body>
+</html>
+
